@@ -16,7 +16,6 @@
  *
  * REFERENCE: Slide LISTING 14.7 — "Handling connection errors with PDO"
  * ============================================================================ */
-// Student Name: Lujain
 
 require_once 'config.inc.php';   // Load the DBCONNSTRING, DBUSER, DBPASS constants
 
