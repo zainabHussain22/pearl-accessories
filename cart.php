@@ -1,27 +1,4 @@
 <?php
-/**
- * ============================================================================
- * FILE:  cart.php
- * ROLE:  Shopping cart page. Displays everything currently in
- *        $_SESSION['cart'], lets the user update quantities, remove single
- *        items, empty the entire cart, or proceed to checkout.
- *
- * CART STORAGE:
- *   The cart is kept in $_SESSION['cart'] (NOT in the database) so guests
- *   can browse and add items before signing in — they only need an account
- *   at checkout time. Each item is an associative array:
- *       ['product_id', 'name', 'price', 'quantity', 'total', 'image']
- *
- * ROLES:
- *   • Admin → blocked (view-only message + redirect).
- *   • User or guest → full cart functionality.
- *
- * STOCK CHECK:
- *   When the user changes a quantity, we re-query `products.stock`
- *   (LISTING 14.17) and reject the update if it exceeds availability.
- * ============================================================================
- */
-// Student Name: Wajeha
 
 include 'includes/header.php';
 include_once 'currency_helper.php';
