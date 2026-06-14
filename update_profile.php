@@ -1,20 +1,5 @@
 <?php
-/**
- * ============================================================================
- * FILE:  update_profile.php
- * ROLE:  Handles the "Edit Profile" form submitted from customer_panel.php.
- *        Updates first_name, last_name, phone, address, city, and country
- *        for the currently logged-in user, then redirects back to the
- *        customer panel with a success/error flag.
- *
- * SECURITY:
- *   • Top-of-file login check — non-users redirected to login.
- *   • Single prepared UPDATE statement (LISTING 14.17) — no SQL injection.
- *   • WHERE clause uses session user_id, so a user can ONLY update their
- *     own row even if they tamper with the form.
- * ============================================================================
- */
-// Student Name: Zainab
+
 
 session_start();
 include 'db.php';
