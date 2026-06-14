@@ -1,25 +1,4 @@
 <?php
-/**
- * ============================================================================
- * FILE:  order_details.php
- * ROLE:  Displays the full breakdown of a single order: each item, the
- *        per-line totals, the grand total, the delivery address, and the
- *        current status badge (Pending / Shipped / Delivered / Cancelled).
- *
- * URL: order_details.php?id={order_id}
- *
- * SECURITY (ownership check):
- *   The WHERE clause is `order_id = :oid AND user_id = :uid` so a user
- *   can never view someone else's order by guessing the URL.
- *
- * QUERY STRATEGY:
- *   • One query for the order header (LISTING 14.17).
- *   • One JOIN query for the order items + product names/images.
- *   • One query for the user's saved address (used both in the HTML and
- *     by the JS map preview).
- * ============================================================================
- */
-// Student Name: Lujain
 
 session_start();
 include 'db.php';
