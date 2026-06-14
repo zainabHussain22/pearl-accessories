@@ -1,5 +1,5 @@
 <?php
-// Student Name: Zainab
+
 session_start();
 
 // Delete the cookie for past_purchases
