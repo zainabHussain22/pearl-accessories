@@ -1,35 +1,5 @@
 <?php
-/**
- * ============================================================================
- * FILE:  admin_panel.php
- * ROLE:  Admin-only dashboard. Four tabs:
- *          1. Products → Add, Search, Modify, Delete (full CRUD)
- *          2. Orders   → View all orders, change status, delete
- *          3. Ratings  → View customer reviews (read-only)
- *          4. Profile  → Admin info + Change Password
- *
- * ACCESS CONTROL:
- *   Top-of-file check `admin_logged_in` — non-admins redirected to
- *   login.php. The cart icon in the header is hidden for admins
- *   (they are view-only on the storefront).
- *
- * PRODUCT IMAGE UPLOADS:
- *   • processMultipleImages() helper validates extension whitelist
- *     (jpg/jpeg/png/gif/webp), generates a unique filename, and moves
- *     each file into the /images directory.
- *   • Multiple images per product → stored as comma-separated string
- *     in the `image` column.
- *
- * ORDER STATUS LOG:
- *   Every status change is recorded in `order_status_log` with the
- *   admin's id, old status, new status, and timestamp — full audit trail.
- *
- * CHANGE PASSWORD (Profile tab):
- *   Same hashing + chip-based UX as register.php and customer_panel.php
- *   (LISTING 12.11 for validation + password_hash on update).
- * ============================================================================
- */
-// Student Name: Sara
+
 session_start();
 include 'db.php';
 include_once 'currency_helper.php';
