@@ -1,34 +1,4 @@
--- ============================================================================
--- FILE:    pearl_accessories.sql  (database schema + sample data)
--- PROJECT: CIS 423 — Pearl Accessories Shopping Cart
--- ============================================================================
---
--- HOW TO USE:
---   1. Open phpMyAdmin (localhost/phpmyadmin)
---   2. (If an old "pearl_accessories" database exists, DROP it first)
---   3. Click "Import" → choose this file → Go
---
--- TABLES (9 total):
---   1. admins            — admin accounts (hashed passwords)
---   2. users             — customer accounts (hashed passwords)
---   3. categories        — product category lookup
---   4. products          — jewelry catalog with multi-image support
---   5. orders            — customer orders
---   6. order_items       — line items per order
---   7. cart              — reserved for future DB-backed cart (currently
---                          the cart lives in $_SESSION['cart'] per slide 15.8)
---   8. ratings           — customer reviews (quality + service scores)
---   9. order_status_log  — audit trail of admin status changes
---
--- DEFAULT LOGINS FOR TESTING:
---   admin / admin123          (admin account)
---   ayah  / 1234              (customer account)
---   zainab / password123      (customer account)
---
--- PASSWORD STORAGE:
---   All passwords use password_hash() with PASSWORD_DEFAULT (bcrypt).
---   Login code uses password_verify() to compare — never plain string ==.
--- ============================================================================
+
 
 CREATE DATABASE IF NOT EXISTS pearl_accessories;
 USE pearl_accessories;
@@ -70,8 +40,8 @@ CREATE TABLE IF NOT EXISTS users (
 
 -- Passwords are hashed via password_hash() — original plain text shown in comments
 INSERT INTO users (user_id, username, password, email, created_at, first_name, last_name, phone, address, city, country) VALUES
-(1, 'ayah', '$2y$10$Sc0u1Ucnhhm8l3Igsgxo8..QXTlo7F1fxGgjS43E.cok6UMlkiJg2', 'ayaakhudear@gmail.com', '2026-04-17 06:32:27', 'Ayah', 'Alzareef', '0549063437', '25 a', 'Qatif', 'Saudi Arabia'), -- pwd: 1234
-(2, 'zainab', '$2y$10$gc.pJQZiN7nwWrngUCUD2.AfmXe4.icOPgvah1ZDXWDxhuSfrYUSy', 'zainab@example.com', '2026-04-17 10:00:00', 'Zainab', '_', '0555555555', 'Main Street 1', 'Riyadh', 'Saudi Arabia'); -- pwd: password123
+(1, 'ayah', '$2y$10$Sc0u1Ucnhhm8l3Igsgxo8..QXTlo7F1fxGgjS43E.cok6UMlkiJg2', 'ayah@gmail.com', '2026-04-17 06:32:27', 'ayah', 'khudear', '0549063437', '25 a', 'Qatif', 'Saudi Arabia'), -- pwd: 1234
+(2, 'zainab', '$2y$10$gc.pJQZiN7nwWrngUCUD2.AfmXe4.icOPgvah1ZDXWDxhuSfrYUSy', 'zainab@example.com', '2026-04-17 10:00:00', 'Zainab', 'Hussain', '0555555555', 'Main Street 1', 'Riyadh', 'Saudi Arabia'); -- pwd: password123
 
 -- 3. CATEGORIES TABLE
 CREATE TABLE IF NOT EXISTS categories (
@@ -142,10 +112,10 @@ CREATE TABLE IF NOT EXISTS orders (
 ) ENGINE=InnoDB AUTO_INCREMENT=52 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 INSERT INTO orders (order_id, user_id, customer_name, customer_email, customer_address, total_amount, order_date, status) VALUES
-(1, 1, 'ayah', 'ayaakhudear@gmail.com', '25 a, Qatif', 299.99, '2026-04-17 09:36:36', 'Pending'),
-(2, 1, 'ayah', 'ayaakhudear@gmail.com', '25 a, Qatif', 299.98, '2026-04-17 09:40:56', 'Shipped'),
-(38, 1, 'ayah', 'ayaakhudear@gmail.com', '25 a, Qatif', 59.99, '2026-04-17 13:58:35', 'Delivered'),
-(51, 1, 'ayah', 'ayaakhudear@gmail.com', '25 a, Qatif', 59.99, '2026-04-17 20:57:40', 'Pending');
+(1, 1, 'ayah', 'ayah@gmail.com', '25 a, Qatif', 299.99, '2026-04-17 09:36:36', 'Pending'),
+(2, 1, 'ayah', 'ayah@gmail.com', '25 a, Qatif', 299.98, '2026-04-17 09:40:56', 'Shipped'),
+(38, 1, 'ayah', 'ayah@gmail.com', '25 a, Qatif', 59.99, '2026-04-17 13:58:35', 'Delivered'),
+(51, 1, 'ayah', 'ayah@gmail.com', '25 a, Qatif', 59.99, '2026-04-17 20:57:40', 'Pending');
 
 -- 6. ORDER_ITEMS TABLE
 CREATE TABLE IF NOT EXISTS order_items (
