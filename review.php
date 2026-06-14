@@ -1,25 +1,5 @@
 <?php
-/**
- * ============================================================================
- * FILE:  review.php
- * ROLE:  Renders the review form for a specific completed order. The
- *        actual database insert happens in save_review.php (separate file
- *        so the form action is clean).
- *
- * URL: review.php?order_id={id}
- *
- * INPUT VALIDATION:
- *   • Admin → blocked (admins don't write reviews).
- *   • Non-logged-in → redirected to login.
- *   • Missing/invalid order_id → friendly error page (not a crash).
- *
- * UX:
- *   Two sentiment sliders (Product Quality + Customer Service) with
- *   live emoji feedback handled in js/review.js — the emoji morphs
- *   from 😡 → 😐 → 😍 as the user drags the slider.
- * ============================================================================
- */
-// Student Name: Wajeha
+
 
 session_start();
 
