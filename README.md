@@ -1,6 +1,6 @@
-# Pearl Accessories — CIS 423 Final Project
+# Pearl Accessories 
 
-A full-stack pearl jewelry e-commerce site built with PHP + MySQL, following the patterns from Chapters 12 (Server-Side PHP), 14 (Databases), and 15 (Sessions & Cookies) of *Fundamentals of Web Development* (Connolly & Hoar, 3rd ed.).
+A full-stack pearl jewelry e-commerce site built with PHP + MySQL.
 
 ---
 
