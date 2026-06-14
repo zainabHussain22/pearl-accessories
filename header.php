@@ -1,25 +1,5 @@
 <?php
-/**
- * ============================================================================
- * FILE:  includes/header.php
- * ROLE:  Shared site header — included at the top of every public page.
- *        Provides:
- *          • <html>, <head>, fonts, and CSS link
- *          • The fixed top navigation (Home / Products / Contact + auth icons)
- *          • The cart badge with a live count of items in $_SESSION['cart']
- *
- * SESSION HANDLING:
- *   We call session_start() ONLY if a session isn't already active —
- *   this prevents "session already started" notices on pages that begin
- *   their own session before including this file.
- *
- * ROLE-AWARE NAV (LISTING 15.8 — check session before access):
- *   • Admin     → top-right shows Admin Panel + Logout (no cart icon).
- *   • Customer  → top-right shows My Account + Logout + cart.
- *   • Guest     → top-right shows Login + Register + cart.
- * ============================================================================
- */
-// Student Name: Najd & Emtenan
+
 
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
