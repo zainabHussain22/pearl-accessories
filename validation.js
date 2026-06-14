@@ -1,11 +1,4 @@
-/* ============================================================================
- * FILE:  js/validation.js
- * ROLE:  Generic client-side validation helpers, loaded on every page.
- *        These are FRIENDLY helpers — server-side validation in PHP is
- *        the real source of truth (a user can disable JS and bypass these).
- * ============================================================================
- */
-// Student Name: Zainab
+
 
 
 // Show an error message inside a span/div with the given id
