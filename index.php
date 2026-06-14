@@ -1,21 +1,5 @@
 <?php
-/**
- * ============================================================================
- * FILE:  index.php
- * ROLE:  Homepage. Three main sections:
- *          1. Hero banner with "SHOP NOW" CTA.
- *          2. "Recent Purchases" ticker — read from the `past_purchases`
- *             COOKIE (LISTING 15.2 / 15.3, Ch. 15). Cookie is written in
- *             buy.php after a successful order and survives 7 days.
- *          3. Product grid — fetched fresh from the `products` table
- *             (LISTING 14.9 — $pdo->query for a SELECT with no params).
- *
- * CATEGORY FILTER:
- *   Client-side JavaScript only — clicks toggle which .prod-card elements
- *   are visible without a page reload.
- * ============================================================================
- */
-// Student Name: Ayah
+
 include 'includes/header.php';
 include 'currency_helper.php';
 ?>
