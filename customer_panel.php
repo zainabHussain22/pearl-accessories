@@ -1,30 +1,5 @@
 <?php
-/**
- * ============================================================================
- * FILE:  customer_panel.php
- * ROLE:  Authenticated user dashboard. Three tabs:
- *          1. Profile  — read-only view of account info.
- *          2. Orders   — history of all the user's orders with status badges.
- *          3. Settings — edit profile + change password.
- *
- * ACCESS CONTROL:
- *   Top-of-file check `user_logged_in` — non-users redirected to login.
- *
- * CHANGE PASSWORD FEATURE (LISTING 12.11 + LISTING 14.17):
- *   • Server verifies the CURRENT password with password_verify() (falls
- *     back to plain text for legacy accounts).
- *   • New password is checked against the same rules as register.php:
- *     ≥ 8 chars, ≥ 1 uppercase, ≥ 1 digit, doesn't start with a digit.
- *   • New password is hashed with password_hash() before UPDATE.
- *   • Confirmation field must match.
- *
- * UX TOUCHES:
- *   • Live "requirement chips" turn green as the user types.
- *   • Eye toggle to show/hide each password field.
- *   • Inline error messages instead of alert popups.
- * ============================================================================
- */
-// Student Name: Lujain
+
 
 session_start();
 include 'db.php';
