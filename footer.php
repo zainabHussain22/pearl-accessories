@@ -1,17 +1,5 @@
 <?php
-/**
- * ============================================================================
- * FILE:  includes/footer.php
- * ROLE:  Shared site footer — included at the bottom of every public page.
- *        Contains:
- *          • A "Subscribe to Newsletter" call-to-action
- *          • Contact info (address + phone)
- *          • Quick navigation links
- *          • The closing </main>, </body>, </html> tags
- *          • Reference to js/validation.js for client-side validation helpers
- * ============================================================================
- */
-// Student Name: Najd & Emtenan
+
 
 ?>
 </main>
