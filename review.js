@@ -1,16 +1,4 @@
-/* ============================================================================
- * FILE:  js/review.js
- * ROLE:  Powers the two sentiment sliders on review.php. As the user drags
- *        each slider, the track color transitions Red → Gold → Green and
- *        the emoji morphs 😡 → 😐 → 😍 with a subtle scale/glow animation.
- *
- * SLIDER STORY:
- *   The brand palette is luxury (gold-on-cream), so neutral 50% is "gold"
- *   instead of plain gray. Anything ≥ 80% triggers a celebratory green
- *   with a soft drop shadow on the emoji.
- * ============================================================================
- */
-// Student Name: Wajeha
+
 
 document.addEventListener("DOMContentLoaded", () => {
     const sliders = document.querySelectorAll(".slider");
