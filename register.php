@@ -1,29 +1,4 @@
 <?php
-/**
- * ============================================================================
- * FILE:  register.php
- * ROLE:  New customer sign-up page. Validates input on BOTH client (JS) and
- *        server (PHP), then inserts a new row into the `users` table with a
- *        hashed password.
- *
- * VALIDATION RULES (LISTING 12.11 — for loop + character comparison):
- *   • Username: not empty, not all digits, must not start with a digit
- *   • Email:    valid format (PHP filter_var + JS regex)
- *   • Password: ≥ 8 chars, ≥ 1 uppercase letter, ≥ 1 digit,
- *               must not start with a digit, not all digits
- *
- * SECURITY:
- *   • Password is hashed with password_hash() before INSERT — original is
- *     never stored.
- *   • All SQL uses prepared statements (LISTING 14.17) → no SQL injection.
- *   • All output is escaped with htmlspecialchars() → no XSS.
- *
- * USER EXPERIENCE:
- *   • Live "requirement chips" turn green as the user satisfies each rule.
- *   • Show/hide password eye toggle.
- * ============================================================================
- */
-// Student Name: Zainab
 
 session_start();
 include 'db.php';
