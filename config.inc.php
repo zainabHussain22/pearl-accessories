@@ -1,20 +1,5 @@
 <?php
-/* ============================================================================
- * FILE: config.inc.php
- * PURPOSE: Stores database connection details as PHP constants.
- *          Centralizing them here means we only edit ONE file if the DB
- *          credentials ever change.
- *
- * USED BY: db.php (which reads these constants to open the PDO connection)
- *
- * REFERENCE: Slide LISTING 14.2 — "Defining connection details via constants
- *            in a separate file (config.inc.php)"
- *
- * SECURITY NOTE: In production, this file should be placed OUTSIDE the public
- *                web directory or protected with .htaccess. For this academic
- *                project, it lives in the project folder.
- * ============================================================================ */
-// Student Name: Lujain
+
 
 // Hostname of the MySQL server. 'localhost' = the same machine running PHP.
 define('DBHOST', 'localhost');
