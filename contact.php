@@ -1,18 +1,5 @@
 <?php
-/**
- * ============================================================================
- * FILE:  contact.php
- * ROLE:  Static contact information page. Shows the shop's address, phone,
- *        email, and working hours, plus an embedded Google Maps iframe
- *        pointing to Al Khobar in the Eastern Province.
- *
- * NOTES:
- *   • No database access required — pure presentation.
- *   • The Google Maps iframe is the textbook example from the project
- *     brief (Task 11) — easy to swap for a real shop address later.
- * ============================================================================
- */
-// Student Name: Najd
+
 
 include 'includes/header.php';
 ?>
