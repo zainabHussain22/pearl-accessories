@@ -1,21 +1,5 @@
 <?php
-/* ============================================================================
- * FILE: db.php
- * PURPOSE: Opens a single PDO database connection that every page can use.
- *          Wraps the connection in try/catch so we handle errors gracefully
- *          instead of showing PHP warnings to the user.
- *
- * HOW IT WORKS:
- *   1. Reads connection constants from config.inc.php
- *   2. Creates a PDO object
- *   3. Configures PDO to throw exceptions on errors (easier to debug)
- *   4. Configures PDO to return rows as associative arrays by default
- *   5. Stores the connection in $pdo for the calling page to use
- *
- * USED BY: Almost every PHP file uses `include 'db.php';` near the top
- *
- * REFERENCE: Slide LISTING 14.7 — "Handling connection errors with PDO"
- * ============================================================================ */
+
 
 require_once 'config.inc.php';   // Load the DBCONNSTRING, DBUSER, DBPASS constants
 
