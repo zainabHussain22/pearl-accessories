@@ -1,30 +1,5 @@
 <?php
-/**
- * ============================================================================
- * FILE:  product.php
- * ROLE:  Single-product detail page. Shows the image gallery, name, price,
- *        description, stock status, and an "Add to Cart" form.
- *
- * URL: product.php?id={product_id}
- *
- * RECENTLY VIEWED FEATURE (clever dual storage):
- *   • Logged-in user → list saved in $_SESSION (private per account,
- *                       isolated across sessions on the same browser).
- *   • Guest visitor  → list saved in a 30-day COOKIE (LISTING 15.2/15.8).
- *   • Max 6 items, current product always pushed to the front.
- *
- * IMAGE GALLERY:
- *   The `image` column in products is a comma-separated list, e.g.:
- *       "pearl-necklace.jpg, necklace-model.jpeg"
- *   We split on ',' to render a slideshow with dots + arrows.
- *
- * ADD TO CART (POST):
- *   • Admins are view-only (blocked with friendly message).
- *   • Stock is validated server-side before adding (LISTING 14.17).
- *   • Cart lives in $_SESSION['cart'] so guests can shop before signup.
- * ============================================================================
- */
-// Student Name: Ayah
+
 
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
