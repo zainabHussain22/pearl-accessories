@@ -1,33 +1,5 @@
 <?php
-/**
- * ============================================================================
- * FILE:  buy.php
- * ROLE:  Final checkout step. Validates inventory one last time, creates
- *        the order, decrements stock, saves the past_purchases cookie,
- *        empties the cart, and redirects to the order summary page.
- *
- * SECURITY GATES (top of file):
- *   1. Admin → blocked from purchasing (view-only role).
- *   2. Unauthenticated → redirected to login.
- *   3. Empty cart → redirected back to cart page.
- *
- * KEY DESIGN DECISIONS:
- *   • User address/email/phone are fetched FRESH from `users` (LISTING
- *     14.17), never from $_SESSION, so updates from the profile page take
- *     effect immediately.
- *   • A second stock check happens here (in addition to product.php and
- *     cart.php) because the user might have lingered with the cart open
- *     while stock dropped to zero.
- *   • Everything wrapped in a SINGLE PDO transaction — if any INSERT or
- *     UPDATE fails, the whole order rolls back so we never end up with
- *     an "orphan" order containing zero items.
- *
- * COOKIE (Ch. 15 — LISTING 15.2):
- *   The 5 most recent purchases are persisted in a 7-day cookie so the
- *   homepage can show a "Welcome back!" ticker on the next visit.
- * ============================================================================
- */
-// Student Name: Wajeha
+
 session_start();
 include 'db.php';
 
