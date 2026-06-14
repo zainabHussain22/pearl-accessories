@@ -1,29 +1,5 @@
 <?php
-/**
- * ============================================================================
- * FILE:  login.php
- * ROLE:  Handles authentication for BOTH admins and regular users using a
- *        single form. The page first looks for the submitted username in
- *        the `admins` table; if found and password matches → admin session.
- *        Otherwise it tries the `users` table → user session.
- *
- * AUTHENTICATION FLOW:
- *   1. Form submits username + password (POST).
- *   2. Fetch row by username only (LISTING 14.17 prepared statement).
- *   3. Verify the submitted password against the stored hash using
- *      password_verify() — falls back to direct comparison if the stored
- *      value is legacy plain text (so old records keep working).
- *   4. On success: clear any opposite-role session keys, set the new
- *      role's keys, and redirect.
- *
- * SECURITY:
- *   • Prepared statements throughout (LISTING 14.17).
- *   • Passwords compared via password_verify(), never via SQL.
- *   • Old "admin" and "user" session keys are explicitly cleared on
- *     login so a user can't inherit admin privileges and vice versa.
- * ============================================================================
- */
-// Student Name: Zainab
+
 
 session_start();
 include 'db.php';
