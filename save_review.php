@@ -1,22 +1,5 @@
 <?php
-/**
- * ============================================================================
- * FILE:  save_review.php
- * ROLE:  Receives the review form POST from review.php, validates ownership
- *        of the order, then inserts a new row into the `ratings` table.
- *
- * SECURITY (CRITICAL — ownership check):
- *   Before inserting, we run a SELECT to confirm that the order_id
- *   actually belongs to the logged-in user. Without this, anyone could
- *   forge a POST with another user's order_id and inject fake reviews.
- *   This was a real vulnerability fix during development.
- *
- * POST-INSERT REDIRECT:
- *   On success → index.php?rating_success=1 (triggers a toast banner).
- *   On failure → back to review.php with an error flag in the query string.
- * ============================================================================
- */
-// Student Name: Wajeha
+
 
 session_start();
 include 'db.php';
